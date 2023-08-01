@@ -1,0 +1,72 @@
+<section class="vh-100 bg-image"
+style="background-image: url('/assets/myimg/ijo8KeK.webp') ; background-size: cover;height: 700px;
+background-position: center;
+background-repeat: no-repeat; position: relative;">
+<div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                <div class="card" style="background: rgb(186, 140, 99);
+border-radius: 15px;
+box-shadow: 12px 12px 22px black;">
+                    <div class="card-body p-5">
+                        <h2 class="text-uppercase text-center mb-5">
+                            Update User</h2>
+
+                           <!-- <div class="form-outline mb-4">
+                                <label class="form-label" for="uname">
+                                    <strong>User Id</strong> </label> <input type="text" id="uname"  readonly
+                                    [(ngModel)]="userDetails.id"
+                                    class="form-control form-control-lg" />
+
+                            </div>
+                        -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="uname">
+                                    <strong>Username</strong> </label> <input type="text" id="uname" 
+                                    [(ngModel)]="user.name"
+                                    class="form-control form-control-lg" />
+
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="uemail"><strong>Email</strong></label> <input
+                                    type="email"  id="uemail"
+                                    [(ngModel)]="user.email"
+                                    class="form-control form-control-lg" />
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="uphn"><strong>Phoneno.</strong></label>
+                                <input type="text" id="uphn" 
+                                [(ngModel)]="user.phno"
+                                    class="form-control form-control-lg" />
+
+                            </div>
+                            <strong class="mb-0 me-4">Gender: </strong>
+                            <br>
+                            
+
+                            <div class="form-outline mb-4">
+                              <input class="form-check-input" type="radio"[(ngModel)]="user.gender" id="femaleGender" value="female" />
+                              <label class="form-check-label" for="femaleGender">Female</label>
+                            </div>
+          
+                            <div class="form-outline mb-4">
+                              <input class="form-check-input" type="radio" [(ngModel)]="user.gender" id="maleGender" value="male" />
+                              <label class="form-check-label" for="maleGender">Male</label>
+                            </div>
+
+                            
+
+                                
+    </div>
+    <div class="d-flex justify-content-center">
+    <button (click)="updateuser(user.id)" type="submit" class="btn btn-light btn-block btn-lg gradient-custom-4 text-body"><strong>Update User</strong></button>
+    </div>
+    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

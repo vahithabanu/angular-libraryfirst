@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "SignUpAdmin": [
+    {
+      "fullname": "Vahitha Banu",
+      "email": "svahitha25@gmail.com",
+      "password": "123",
+      "mobile": 567890321,
+      "id": 1
+    },
+    {
+      "fullname": "Salaudeen",
+      "email": "sala.sala26@gmail.com",
+      "password": "256",
+      "mobile": 7708462626,
+      "id": 2
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

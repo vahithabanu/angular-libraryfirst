@@ -1,0 +1,46 @@
+<h1 class="text-center">BOOK LIST</h1>
+<section class="intro" *ngIf="showNavbar">
+    <div class="bg-image h-100" style="background-image: url('https://mdbootstrap.com/img/Photos/new-templates/tables/img2.jpg');">
+      <div class="mask d-flex align-items-center h-100" style=" background-color:white">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card bg-dark shadow-2-strong">
+                <div class="card-body">
+                  <div class="table-responsive">
+<table class="table mb-0">
+    <thead thead-dark>
+        <th>BookId</th>
+        <th>Book Title</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Publication</th>
+        <th>Publish Date</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let b of book">
+            <td>{{b.bookId}}</td>
+            <td>{{b.title}}</td>
+            <td>{{b.author}}</td>
+            <td>{{b.category}}</td>
+            <td>{{b.publication}}</td>
+            <td>{{b.publish_Date}}</td>
+            <td>
+              <button (click)="updateBook(b.bookId)" class="btn btn-info" >Update</button>
+            </td>
+            <td>
+              <button (click)="deleteBook(b.bookId)" class="btn btn-danger" style="margin-left:10px" >Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>

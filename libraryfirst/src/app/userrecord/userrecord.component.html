@@ -1,0 +1,27 @@
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Issue No</th>
+            <th scope="col">Status</th>
+            <th scope="col">Issue Date</th>
+            <th scope="col">Return Within Date</th>
+            <th scope="col">Actual Return Date</th>
+            <th scope="col">Book Id</th>
+            <th scope="col">User Id</th>
+            <th scope="col">Action</th>
+          </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let bk of bookissue">
+        <th scope="row">{{bk.issueId}}</th>
+        <td>{{bk.status}}</td>
+        <td>{{bk.issueDate}}</td>
+        <td>{{bk.returnWithinDate}}</td>
+        <td>{{bk.actualReturnedDate}}</td>
+        <td>{{bk.book.bookId}}</td>
+        <td>{{bk.libuser.id}}</td>
+        <td> <button (click)="onDelete(bk)"  class="btn btn-danger">Delete</button></td>
+
+      </tr>
+    </tbody>
+  </table>

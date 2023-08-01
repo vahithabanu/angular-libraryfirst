@@ -1,0 +1,108 @@
+<section class="vh-100 bg-image"
+style="background-image: url('/assets/myimg/ijo8KeK.webp') ; background-size: cover;height: 700px;
+background-position: center;
+background-repeat: no-repeat; position: relative;">
+<div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                <div class="card" style="background: rgb(186, 140, 99);
+border-radius: 15px;
+box-shadow: 12px 12px 22px black;">
+
+                    <div class="card-body p-5">
+                        <h2 class="text-uppercase text-center mb-5">
+                            Add New User</h2>
+
+                            
+
+                                <div class="form-outline mb-4"  [class.has-error]="name.invalid && name.touched">
+                                    <label class="form-label" class="control-label" for="uname">
+                                        <strong>Username</strong> </label> <input type="text"  id="uname"  required pattern="[a-zA-Z' ']{1,32}" minlength="3"  placeholder="Enter Name"
+                                        [(ngModel)]="userDetails.name"  #name="ngModel"
+                                        class="form-control form-control-lg" />
+
+                                        <span class="help-block" *ngIf="name.errors?.['required'] && name.touched">
+                                            <p style="color: red;">* User name Required</p>
+                                        </span>
+                                            
+                                        <span class="help-block" *ngIf="name.errors?.['minlength'] && name.touched">
+                                            <p style="color: red;">* Name Must Be 3 Letters</p>
+                                        </span>
+
+                                        <span class="help-block" *ngIf="name.errors?.['pattern'] && name.touched">
+                                            <p style="color: red;">* Invalid Name </p>
+                                        </span>
+
+                                
+
+                                </div>
+                                <div class="form-outline mb-4"  [class.has-error]="email.invalid && email.touched">
+                                    <label class="form-label" for="uemail" class="control-label"><strong>Email</strong></label> <input
+                                        type="email" id="uemail"  placeholder="Eg@gmail.com"
+                                        [(ngModel)]="userDetails.email" required email #email="ngModel"
+                                        class="form-control form-control-lg" />
+                                <span class="help-block" *ngIf="email.errors?.['required'] && email.touched">
+                                    <p style="color: red;">* Email Required</p>
+                                </span>
+                                    
+                                <span class="help-block" *ngIf="email.errors?.['email'] && email.touched">
+                                    <p style="color: red;">* Email Is Invalid</p>
+                                </span>
+
+                                </div>
+
+                                <div class="form-outline mb-4" [class.has-error]="phno.invalid && phno.touched">
+                                    <label class="form-label" for="uphn"><strong>Phoneno.</strong></label>
+                                    <input type="text" id="uphn" placeholder="Enter  Phone Number"
+                                    [(ngModel)]="userDetails.phno"  required pattern="[789][0-9]{9}" minlength="10"  #phno="ngModel"
+                                        class="form-control form-control-lg" />
+
+
+                                        <span class="help-block" *ngIf="phno.errors?.['required'] && phno.touched">
+                                            <p style="color: red;">* Phone Number Required</p>
+                                        </span>
+                                            
+                                        <span class="help-block" *ngIf="phno.errors?.['minlength'] && phno.touched">
+                                            <p style="color: red;">* Phone Number Must Be 10 Digits</p>
+                                        </span>
+
+                                        <span class="help-block" *ngIf="phno.errors?.['pattern'] && phno.touched">
+                                            <p style="color: red;">* Invalid Phone Nmuber</p>
+                                        </span>
+
+
+                                </div>
+                                <strong class="mb-0 me-4" [class.has-error]="gen.invalid && gen.touched" >Gender: </strong>
+                                <br>
+                                
+
+                                <div class="form-outline mb-4">
+                                  <input class="form-check-input" type="radio"[(ngModel)]="userDetails.gender" required #gen="ngModel" id="femaleGender" value="female" />
+                                  <label class="form-check-label" for="femaleGender">Female</label>
+                                </div>
+              
+                                <div class="form-outline mb-4">
+                                  <input class="form-check-input" type="radio" [(ngModel)]="userDetails.gender" required #gen="ngModel" id="maleGender" value="male" />
+                                  <label class="form-check-label" for="maleGender">Male</label>
+                                </div>
+
+                                <span class="help-block" *ngIf="gen.invalid && gen.touched">
+                                    <p style="color: red;">* Gender Required</p>
+                                </span>
+                                
+        <div class="d-flex justify-content-center">
+        <button [disabled]="name.invalid || email.invalid || phno.invalid || gen.invalid"  (click)="adduser()"  type="submit" class="btn btn-light btn-block btn-lg gradient-custom-4 text-body"><strong>Add User</strong></button>	
+        </div>
+
+    
+                    
+                            
+    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</section>

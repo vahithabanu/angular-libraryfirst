@@ -1,0 +1,121 @@
+<div >
+    <br>
+<div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                <div class="card" style="background:rgb(30,144,255); color:white;
+border-radius: 15px;
+box-shadow: 12px 12px 22px black ;">
+                    <div class="card-body p-5">
+                        <h2 class="text-uppercase text-center mb-5">
+                            Add New Books</h2>
+
+                        
+                            <div class="form-outline mb-4" [class.has-error]="bt.invalid && bt.touched">
+                                <label class="form-label" for="bktitle">
+                                    <strong>Book Title</strong> </label>
+<input type="text" id="bktitle" required pattern="[a-zA-Z0-9' ']{1,32}" minlength="3" 
+                                    [(ngModel)]="book.title"  #bt="ngModel" placeholder="Enter Book Title"
+                                    class="form-control form-control-lg" />
+
+                                    <span class="help-block" *ngIf="bt.errors?.['required'] && bt.touched">
+                                        <p style="color: red;">* Book Title Required</p>
+                                    </span>
+                                        
+                                    <span class="help-block" *ngIf="bt.errors?.['minlength'] && bt.touched">
+                                        <p style="color: red;">* Title Must Be 3 Letters</p>
+                                    </span>
+
+                                    <span class="help-block" *ngIf="bt.errors?.['pattern'] && bt.touched">
+                                        <p style="color: red;">* Invalid Title </p>
+                                    </span>
+
+                            </div>
+                            <div class="form-outline mb-4" [class.has-error]="ba.invalid && ba.touched">
+                                <label class="form-label" for="bkauthor"><strong>Book Author</strong></label> <input
+                                    type="email" id="bkauthor" required pattern="[a-zA-Z' ']{1,32}" minlength="3" placeholder="Enter Book Author"
+                                    [(ngModel)]="book.author"  #ba="ngModel"
+                                    class="form-control form-control-lg" />
+                                    <span class="help-block" *ngIf="ba.errors?.['required'] && ba.touched">
+                                        <p style="color: red;">* Book Author Required</p>
+                                    </span>
+                                        
+                                    <span class="help-block" *ngIf="ba.errors?.['minlength'] && ba.touched">
+                                        <p style="color: red;">* Author Must Be 3 Letters</p>
+                                    </span>
+
+                                    <span class="help-block" *ngIf="ba.errors?.['pattern'] && ba.touched">
+                                        <p style="color: red;">* Invalid Author </p>
+                                    </span>
+
+                            </div>
+
+                            <div class="form-outline mb-4" [class.has-error]="bk.invalid && bk.touched">
+                                <label class="form-label" for="bkctgry"><strong>Book category</strong></label>
+                                <input type="text" id="bkctgry" required pattern="[a-zA-Z0-9' ']{1,32}" minlength="2" placeholder="Enter Book Category"
+                                [(ngModel)]="book.category" #bk="ngModel"
+                                    class="form-control form-control-lg" />
+
+                                    <span class="help-block" *ngIf="bk.errors?.['required'] && bk.touched">
+                                        <p style="color: red;">* Book Category Required</p>
+                                    </span>
+                                        
+                                    <span class="help-block" *ngIf="bk.errors?.['minlength'] && bk.touched">
+                                        <p style="color: red;">* Category Must Be 2 Letters</p>
+                                    </span>
+
+                                    <span class="help-block" *ngIf="bk.errors?.['pattern'] && bk.touched">
+                                        <p style="color: red;">* Invalid Category </p>
+                                    </span>
+
+
+                            </div>
+                            <div class="form-outline mb-4" [class.has-error]="pb.invalid && pb.touched">
+                                <label class="form-label" for="bkpub"><strong>Publication</strong></label>
+                                <input type="text" id="bkpub"  required pattern="[a-zA-Z' ']{1,32}" minlength="3" placeholder="Enter Publication"
+                                [(ngModel)]="book.publication"  #pb="ngModel"
+                                    class="form-control form-control-lg" />
+                                    <span class="help-block" *ngIf="pb.errors?.['required'] && pb.touched">
+                                        <p style="color: red;">* Publication  Required</p>
+                                    </span>
+                                        
+                                    <span class="help-block" *ngIf="pb.errors?.['minlength'] && pb.touched">
+                                        <p style="color: red;">* Publication Must Be 3 Letters</p>
+                                    </span>
+
+                                    <span class="help-block" *ngIf="pb.errors?.['pattern'] && pb.touched">
+                                        <p style="color: red;">* Invalid Publication </p>
+                                    </span>
+
+                            </div>
+
+                            <div class="form-outline mb-4" [class.has-error]="pd.invalid && pd.touched">
+                                <label class="form-label" for="bkdate"><strong>Published Date</strong></label>
+                                
+                                <input  type="date"  id="bkdate"  required 
+                                [(ngModel)]="book.publish_Date"  #pd="ngModel"
+                                    class="form-control form-control-lg" />
+
+                                    <span class="help-block" *ngIf="pd.errors?.['required'] && pd.touched">
+                                        <p style="color: red;">* Publication Date  Required</p>
+                                    </span>
+
+                                
+                            </div>
+
+
+                                
+    </div>
+    <div class="d-flex justify-content-center">
+
+    <button [disabled]="bt.invalid || ba.invalid || bk.invalid || pb.invalid || pd.invalid" (click)="onSubmit()" type="submit" class="btn btn-light btn-block btn-lg gradient-custom-4 text-body"><strong>Add Book</strong></button>
+    </div>
+    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

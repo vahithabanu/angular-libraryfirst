@@ -1,0 +1,53 @@
+<nav *ngIf="showNavbar" class="navbar navbar-expand-sm navbar navbar-dark bg-dark" >
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a routerLink="books" class="nav-link" routerLinkActive="active">Book List</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="create-book" class="nav-link" routerLinkActive="active">Add Book</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="create-libraryuser" class="nav-link" routerLinkActive="active">Add User</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="userlist" class="nav-link" routerLinkActive="active">User List</a>
+        </li>
+        <li>
+            <a routerLink="/userrecord" class="nav-link" routerLinkActive="active">
+                
+                User Record
+            </a>
+        </li>
+        <li>
+            <a routerLink="/createissue" class="nav-link" routerLinkActive="active">
+               
+               Issue Book
+            </a>
+        </li>
+        <li>
+            <a routerLink="/returnbook" class="nav-link" routerLinkActive="active">
+                
+                Return Book
+            </a>
+        </li>
+            <li>
+            <a href="#" class="nav-link" routerLinkActive="active">
+                
+                Logout
+            </a>
+        </li>
+    </ul>
+    
+    </nav>
+    <div>
+      
+<img src="../assets/myimg/libimg.jpg" style="background-size: 100% 100%; width:1705px; height:784px"/>
+
+
+</div>
+
+
+<router-outlet></router-outlet>
+
+
+

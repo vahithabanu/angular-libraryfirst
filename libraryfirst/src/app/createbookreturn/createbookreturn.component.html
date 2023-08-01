@@ -1,0 +1,120 @@
+<section class="vh-100 bg-image"
+			style="background-image: url('/assets/myimg/ijo8KeK.webp') ; background-size: cover;height: 700px;
+            background-position: center;
+            background-repeat: no-repeat; position: relative;">
+			<div class="mask d-flex align-items-center h-100 gradient-custom-3">
+				<div class="container h-100">
+					<div class="row d-flex justify-content-center align-items-center h-100">
+						<div class="col-12 col-md-9 col-lg-7 col-xl-6">
+							<div class="card" style="background: rgb(186, 140, 99);
+            border-radius: 15px;
+            box-shadow: 12px 12px 22px black;">
+								<div class="card-body p-5">
+									<h2 class="text-uppercase text-center mb-5">
+										Add Book Return  Details</h2>
+
+										<div class="form-outline mb-4" [class.has-error]="uid.invalid && uid.touched">
+											<label class="form-label" for="uname">
+												<strong>Issue Id </strong> </label> <input type="text" id="uname" required pattern="[0-9]{1,3}" minlength="1"
+                                                [(ngModel)]="bookissueDetails.issueId" #uid="ngModel" placeholder="Enter User ID"
+												class="form-control form-control-lg" />
+
+												<span class="help-block" *ngIf="uid.errors?.['required'] && uid.touched">
+													<p style="color: red;">* Issue ID Required</p>
+												</span>
+													
+												<span class="help-block" *ngIf="uid.errors?.['minlength'] && uid.touched">
+													<p style="color: red;">* Issue ID Must Be 1 digit</p>
+												</span>
+		
+												<span class="help-block" *ngIf="uid.errors?.['pattern'] && uid.touched">
+													<p style="color: red;">* Invalid Issue ID</p>
+												</span>
+
+
+										</div>
+									<!--   **-->
+										<div class="form-outline mb-4" [class.has-error]="uid.invalid && uid.touched">
+											<label class="form-label" for="uname">
+												<strong>User Id </strong> </label> <input type="text" id="uname" required pattern="[0-9]{1,3}" minlength="1"
+                                                [(ngModel)]="bookissueDetails.libuser.id" #uid="ngModel" placeholder="Enter User ID"
+												class="form-control form-control-lg" />
+
+												<span class="help-block" *ngIf="uid.errors?.['required'] && uid.touched">
+													<p style="color: red;">* User ID Required</p>
+												</span>
+													
+												<span class="help-block" *ngIf="uid.errors?.['minlength'] && uid.touched">
+													<p style="color: red;">* User ID Must Be 1 digit</p>
+												</span>
+		
+												<span class="help-block" *ngIf="uid.errors?.['pattern'] && uid.touched">
+													<p style="color: red;">* Invalid User ID</p>
+												</span>
+
+
+										</div>
+										<div class="form-outline mb-4" [class.has-error]="bid.invalid && bid.touched">
+											<label class="form-label" for="uemail"><strong>Book Id</strong></label> <input
+												type="text" id="uemail" required pattern="[0-9]{1,3}" minlength="1" placeholder="Enter Book ID"
+                                                [(ngModel)]="bookissueDetails.book.bookId"  #bid="ngModel"
+												class="form-control form-control-lg" />
+
+												<span class="help-block" *ngIf="bid.errors?.['required'] && bid.touched">
+													<p style="color: red;">* Book ID Required</p>
+												</span>
+													
+												<span class="help-block" *ngIf="bid.errors?.['minlength'] && bid.touched">
+													<p style="color: red;">* Book ID Must Be 1 digit</p>
+												</span>
+		
+												<span class="help-block" *ngIf="bid.errors?.['pattern'] && bid.touched">
+													<p style="color: red;">* Invalid Book ID</p>
+												</span>
+										</div>
+
+										
+                                        <div class="form-outline mb-4" [class.has-error]="ard.invalid && ard.touched">
+											<label class="form-label" for="uphn"><strong>Actual Returned Date</strong></label>
+											<input type="date" id="uphn" #ard="ngModel" required min="2021-11-19"
+                                            [(ngModel)]="bookissueDetails.actualReturnedDate"
+												class="form-control form-control-lg" />
+												<span class="help-block" *ngIf="ard.invalid && ard.touched">
+													<p style="color: red;">* Actual Returned Date Required</p>
+												</span>
+												
+
+
+										</div>
+
+                                        <strong class="mb-0 me-4" [class.has-error]="st.invalid && st.touched">Status: </strong>
+                                        <br>
+                                        
+
+                                        <div class="form-outline mb-4">
+                                          <input class="form-check-input" required type="radio"[(ngModel)]="bookissueDetails.status" #st="ngModel" id="Issue" value="issued" />
+                                          <label class="form-check-label" for="issue">Issued</label>
+                                        </div>
+                      
+                                        <div class="form-outline mb-4">
+                                          <input class="form-check-input" required type="radio" [(ngModel)]="bookissueDetails.status" #st="ngModel" id="return" value="returned" />
+                                          <label class="form-check-label" for="return">Returned</label>
+                                        </div>
+
+										<span class="help-block" *ngIf="st.invalid && st.touched">
+											<p style="color: red;">* Status Required</p>
+										</span>
+										
+
+											
+                </div>
+				<div class="d-flex justify-content-center">
+				<button [disabled]="uid.invalid || bid.invalid || st.invalid || ard.invalid" (click)="addreturn()" type="submit" class="btn btn-light btn-block btn-lg gradient-custom-4 text-body"><strong>Return Book</strong></button>
+				</div>
+				</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+		</section>
